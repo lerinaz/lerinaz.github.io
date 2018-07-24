@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="由于排版不当，有些文章展示出来不怎么好看，所以昨晚挨个儿清查了一遍，并且将文章的 tag 由小写改为大写。然而打开博客的 Hexo 标签后却出现了404页面。这篇文章记录了解决这个问题的全过程。">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="修改文章标签的大小写之后……">
+<meta property="og:url" content="http://yoursite.com/2018/05/09/修改文章标签的大小写之后/index.html">
+<meta property="og:site_name" content="Lerina&#39;s Blog">
+<meta property="og:description" content="由于排版不当，有些文章展示出来不怎么好看，所以昨晚挨个儿清查了一遍，并且将文章的 tag 由小写改为大写。然而打开博客的 Hexo 标签后却出现了404页面。这篇文章记录了解决这个问题的全过程。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2018/05/09/5af2aa2063e1e.png">
+<meta property="og:image" content="https://i.loli.net/2018/05/09/5af2b4b3b025f.png">
+<meta property="og:image" content="https://i.loli.net/2018/05/09/5af2ba13cda98.png">
+<meta property="og:image" content="https://i.loli.net/2018/05/09/5af2ba96e4bf0.png">
+<meta property="og:image" content="https://i.loli.net/2018/05/09/5af2c866684f7.png">
+<meta property="og:image" content="https://i.loli.net/2018/05/10/5af45b9c51c7b.png">
+<meta property="og:updated_time" content="2018-05-10T14:56:45.946Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="修改文章标签的大小写之后……">
+<meta name="twitter:description" content="由于排版不当，有些文章展示出来不怎么好看，所以昨晚挨个儿清查了一遍，并且将文章的 tag 由小写改为大写。然而打开博客的 Hexo 标签后却出现了404页面。这篇文章记录了解决这个问题的全过程。">
+<meta name="twitter:image" content="https://i.loli.net/2018/05/09/5af2aa2063e1e.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/09/修改文章标签的大小写之后/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>修改文章标签的大小写之后…… | Lerina's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lerina's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/09/修改文章标签的大小写之后/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lerina's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">修改文章标签的大小写之后……
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-09 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-09T00:00:00+08:00">2018-05-09</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-10 22:56:45" itemprop="dateModified" datetime="2018-05-10T22:56:45+08:00">2018-05-10</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>由于排版不当，有些文章展示出来不怎么好看，所以昨晚挨个儿清查了一遍，并且将文章的 tag 由小写改为大写。然而打开博客的 Hexo 标签后却出现了404页面。这篇文章记录了解决这个问题的全过程。</p>
+<a id="more"></a>
+<p>当我知道中英文混排需要加空格时，我是没有想到此次修改所引发的一系列问题的。当时只想着“哇改了之后变好看了”，结果等我点开 Hexo 标签：<br><img src="https://i.loli.net/2018/05/09/5af2aa2063e1e.png" alt="image"></p>
+<p>发生了什么？</p>
+<p>最先想到的是可能是因为缓存，等一会儿就会好了。可是等了三会儿也是这样的结果，我有点担心，好像哪里不对劲。</p>
+<p>然后点文章底部的标签也是这样，看来是真的出问题了。在海螺林的帮助下找到了原因：Windows 系统下的 Git 默认设置对大小写不敏感，在 GitHub 上展示出来的仍然是小写：<br><img src="https://i.loli.net/2018/05/09/5af2b4b3b025f.png" alt="image"></p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>于是按照师兄提供的解决办法进行修改：<a href="http://zhuxin.tech/2017/08/26/Hexo部署到GitHub大写开头的标签出现404/" target="_blank" rel="noopener">Hexo部署到GitHub大写开头的标签出现404</a>（以下步骤引自该文章）</p>
+<ol>
+<li><p>在博客文件夹中找到<code>.deploy_git</code>文件夹，打开<code>config</code>文件，将其中的<code>ignorecase=true</code>改为<code>ignorecase=false</code></p>
+</li>
+<li><p>在<code>.deploy_git</code>文件夹中，删除里面的所有文件（注意不是删除<code>.deploy_git</code>文件夹，而是删除它里面的内容），并 push 到 Github 上, 这一步是清空你的 github.io 项目中所有文件。运行命令：</p>
+<pre><code>cd .deploy_git
+
+git rm -rf *
+
+git commit -m &apos;clean all file&apos;
+
+git push
+</code></pre></li>
+<li><p>最后使用 Hexo 再次生成及部署。运行命令：</p>
+<pre><code>cd ..
+
+hexo clean
+
+hexo g 
+
+hexo d
+</code></pre></li>
+</ol>
+<h2 id="我的状况"><a href="#我的状况" class="headerlink" title="我的状况"></a>我的状况</h2><p>第一步就出事了：当我打开<code>config</code>文件时，发现<code>ignorecase</code>后面并不是接的<code>true</code>，而是<code>ignorecase = true[branch master]</code>，嗯——怎么办呢？先不管它，只把<code>true</code>改掉，方括号保留。然后运行命令，得到的反馈是：<br><img src="https://i.loli.net/2018/05/09/5af2ba13cda98.png" alt="image"><br>看来不对，于是又把<code>[branch master]</code>去掉，仍然不对：<br><img src="https://i.loli.net/2018/05/09/5af2ba96e4bf0.png" alt="image"><br>细读之下我注意到了<code>bad numeric config value</code>和<code>invalid unit</code>，这也许是说<code>config</code>文件中的格式出现了错误？并且由反馈来看，两个项目<code>ignorecase = false</code>和<code>remote = git@github.com:lerinaz/lerinaz.github.io.git</code>粘连到了一起，变成了<code>remote = git@github.com:lerinaz/lerinaz.github.io.git</code>，所以我推断<code>ignorecase</code>项和<code>remote</code>项之间的空格不对——或许是因为删除时的空格没留够？但是第一次只改没删也是这样的错误啊？</p>
+<p>于是开始四处寻找，输入<code>bad numeric config value</code>和<code>invalid unit</code>，知道了是 Git 运行时由于其下的文件出错而无法识别，然后仔细对比，先是发现等号两边没有空格，然后又发现因为<code>remote = git@github.com:lerinaz/lerinaz.github.io.git</code>恰好在等号处换行，所以我又一次在换行开头时漏掉了空格。改掉这两处错误后还是不对，仍然是<code>bad numeric config value</code>，到此我已经花了一个上午搞这个东西，被它折腾到绝望。</p>
+<p>睡个午觉起来接着弄，一次只加一个空格，加一个空格就删除并重新部署一次，在加到足足八个空格的时候我火了——搞什么呢？！为什么总是出问题！就不能一劳永逸吗？气得我反手打开了 B 站，看起布袋戏来。却又总想着这件事还没有解决掉，一阵纠结后又回到了<code>config</code>。不过这次我豁出去了，反正有这么厉害的林师兄在，干脆一不做二不休，直接把<code>remote</code>提行，要是翻车了就呼救……抱着这样的心态我大胆试了试，结果成功了！再打开博客标签：<br><img src="https://i.loli.net/2018/05/09/5af2c866684f7.png" alt="image"></p>
+<p><strong>但是，事情到这里并没有结束……</strong></p>
+<p>在添加评论区的时候又翻车了。修改评论区所对应的<code>config</code>文件之后出现了网页加载错误的问题，最终把症结定位在我之前对<code>ignorcase</code>所做的改动。因为当时是用记事本打开了文件，所以每一项应该有的提行并没有展示出来。在这里师兄告诉我“不要用记事本编辑任何配置文件”，并且让我以后都换做 VSCode。当我用 VSCode 打开<code>config</code>并再次修改的时候，果然清爽了很多：<br><img src="https://i.loli.net/2018/05/10/5af45b9c51c7b.png" alt="image"><br>并且能够很清楚地看见第 8 行的<code>remote</code>格式不对。也就是说，由于我之前用记事本做修改全凭感觉，导致现在出问题了。</p>
+<h2 id="所以"><a href="#所以" class="headerlink" title="所以"></a>所以</h2><ul>
+<li>更改<code>config</code>文件时注意符号两边是否需要空格</li>
+<li><code>ignorecase = false</code>后面到底要不要跟<code>[branch master]</code>呢？现在我也不知道，之后或许会试试吧</li>
+<li>上面一项被否决了，我也不敢再轻易尝试</li>
+<li>别用记事本打开<code>config</code>文件</li>
+</ul>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/08/Hexo 博客各种问题汇总/" rel="next" title="Hexo 博客各种问题汇总">
+                <i class="fa fa-chevron-left"></i> Hexo 博客各种问题汇总
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/11/南汉山城：王的尊严，民的春秋/" rel="prev" title="南汉山城：王的尊严，民的春秋">
+                南汉山城：王的尊严，民的春秋 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjM2OC8xMjkwMw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">1.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我的状况"><span class="nav-number">2.</span> <span class="nav-text">我的状况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#所以"><span class="nav-number">3.</span> <span class="nav-text">所以</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

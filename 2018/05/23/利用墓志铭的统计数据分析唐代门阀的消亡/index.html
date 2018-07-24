@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="【美】谭凯(Nicolas Tackett)，《中古中国门阀大族的消亡》(The Destruction of the Medieval Chinese Aristocracy)；胡耀飞 &amp;amp; 谢宇荣译；社会科学文献出版社，2017.4 书中所用的资料均收录于出版方数据库 及 谭凯个人网站">
+<meta name="keywords" content="历史,计量史学">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用墓志铭的统计数据分析唐代门阀的消亡">
+<meta property="og:url" content="http://yoursite.com/2018/05/23/利用墓志铭的统计数据分析唐代门阀的消亡/index.html">
+<meta property="og:site_name" content="Lerina&#39;s Blog">
+<meta property="og:description" content="【美】谭凯(Nicolas Tackett)，《中古中国门阀大族的消亡》(The Destruction of the Medieval Chinese Aristocracy)；胡耀飞 &amp;amp; 谢宇荣译；社会科学文献出版社，2017.4 书中所用的资料均收录于出版方数据库 及 谭凯个人网站">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-23T08:55:49.516Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="利用墓志铭的统计数据分析唐代门阀的消亡">
+<meta name="twitter:description" content="【美】谭凯(Nicolas Tackett)，《中古中国门阀大族的消亡》(The Destruction of the Medieval Chinese Aristocracy)；胡耀飞 &amp;amp; 谢宇荣译；社会科学文献出版社，2017.4 书中所用的资料均收录于出版方数据库 及 谭凯个人网站">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/23/利用墓志铭的统计数据分析唐代门阀的消亡/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>利用墓志铭的统计数据分析唐代门阀的消亡 | Lerina's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lerina's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/23/利用墓志铭的统计数据分析唐代门阀的消亡/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lerina's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">利用墓志铭的统计数据分析唐代门阀的消亡
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-23 00:00:00 / 修改时间：16:55:49" itemprop="dateCreated datePublished" datetime="2018-05-23T00:00:00+08:00">2018-05-23</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/读书笔记/" itemprop="url" rel="index"><span itemprop="name">读书笔记</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>【美】谭凯(Nicolas Tackett)，《中古中国门阀大族的消亡》(The Destruction of the Medieval Chinese Aristocracy)；胡耀飞 &amp; 谢宇荣译；社会科学文献出版社，2017.4</p>
+<p>书中所用的资料均收录于<a href="publications.asiacenter.harvard.edu\tackett2014">出版方数据库</a> 及 <a href="www.ntackett.com">谭凯个人网站</a></p>
+<a id="more"></a>
+<p>去年就瞄准了的一本书，由于当时吕思勉的《两晋南北朝史》和《隋唐五代史》都没有读完，对这一时期的门阀制度了解只限于高中历史，所以直到这个月才真正拿起来读。<br>在读之前对本书最大的期望在于“黄巢之乱是导致古代中国的门阀制度走向消亡”的观点上。关于门阀制度的消亡，史学界的态度一向是“渐进式的、综合因素导致的，其中科举制、印刷术和商品经济的发展是关键性因素”。所以很想知道作者会怎么提出和论证自己的观点。</p>
+<p>对于门阀大族的研究往往和门阀政治联系在一起，并由此扩展到官僚政治的演变、中央集权的加强、商品经济的发展等话题，以至于可以说门阀是中国古代历史研究中颇具枢纽性质的一环。门阀在汉代就已形成，东汉至两晋发展为门阀政治，一度和皇权分庭抗礼。隋唐时期门阀大族的影响力转向深入，在地方事务的处理上具有相当大的话语权，事实上门阀大族在晚唐时期仍然势力庞大。而一直到了宋代，一方面皇帝不加掩饰地对世家大族进行打击，另一方面越来越多的寒门学士进入国家权力核心，并导致了“天子门生”逐步取代世族恩荫以提供官僚的传统模式，至此在中国延续了数百年的门阀才正式走向终结。</p>
+<p>关于门阀大族的消亡原因，传统研究主要关注点在唐宋变革论上，这就导致了线性历史观所带来的一系列问题，最核心的是无法确定门阀消亡与中央集权相关政策之间的是否确有决定关系。对于人文学科而言，“线性“是难以逃避的障碍，毕竟历史已经发生，站在当下的我们无法知道另一种历史走向的结果（类似于幸存者偏差），所以对于传统结论，我一直认为是看起来合理，但实际上究竟如何是很难确定的。比如，商品经济的发展破坏了世家大族存在的经济基础。首先，对商品经济的定义是什么？如果关键词是交换，那么先秦时期就有商品经济的萌芽，而如果定义为雇佣，史学界将时间推到了明晚期，同时强调了这是手工业的雇佣，那么为什么对农业雇佣避而不谈，而以手工业作为标准呢？其次，对于历史资料的挖掘有相当大的周旋余地，很难说明两者之间存在必然的直接的联系，它们可能是同一时期并存的两种趋势，由于历史总趋势是相同的，并且门阀消亡和中央集权都在其后的朝代中继续进行，就很有可能形成了二者之间有因果关系的错觉，虽然实际上它们处于同一层面，由更高一层的因素决定。</p>
+<p>因此我对谭凯的这本书报以很高的期望。由于高中阶段对计量史学只闻其名不见其形，更没有亲自尝试过，只是受陈志武和李楠两位教授的影响，加上自己对于中国历史治学的随意性报以很大的怀疑态度，所以希望看到数据库量化分析在政治史学研究中到底能发挥多大的作用。</p>
+<hr>
+<p>总体说来《中古中国门阀大族的消亡》达到了我的期望值，在计量史学的研究方法上谭凯采用了不同于传统的定义方式，比如在反驳安史之乱是门阀消亡的转折点这一观点时，他提出宪宗末年朝廷和藩镇之间的关系开启了新的阶段，逐步恢复了中央对地方的控制权。为了论证自己的观点，他采用以“特定藩镇藩帅任命途径”“特定藩镇藩帅背景”“拥有仕宦家族史的藩帅”“居住于京城或与京城婚姻网络有联系的藩帅”（第四章图4-2，4-3，4-4，4-5）四张图就说明了新型的中央-藩镇关系，对过去的宪宗朝收权的成效不显的观点是有力的反驳。这一处给我留下了深刻的印象，甚至让我有点想尝试下计量史学……虽然下一秒就意识到对于现在的我是不可能的。</p>
+<p>本书的思路很清晰：政治精英的定义和定位——京城精英的婚姻网络——中唐至晚唐的藩镇情况，驳安史之乱导致门阀消亡的观点——黄巢之乱才是导致门阀大族消亡的直接原因。在此不必再记述其中的论证方式，作者在书中的花式数据分析法让书桌前的我目瞪口呆——还能这么用？！……可能是我见识短浅吧，被各种图表晃得眼花缭乱，并且深深折服于谭凯治学角度和思路的严密。</p>
+<p>去年刚发现这本书的时候就请教了彭老师，她让我读了再说，并且告诉我毛汉光对中晚唐的研究有借鉴意义。不过即使到现在，在看了关于一些黄巢之乱的资料后，谭凯所提出的黄巢之乱的重大影响仍然让我感到惊奇。一些旁支的观点也非常有趣：</p>
+<ul>
+<li>唐代门阀大族有相当的适应力，即使在科举制日趋完善、中央集权加强的情况下，仍然凭借其庞大的婚姻关系和强大的繁衍能力保持着对权力的掌控。（此处谭凯还对墓志铭中唐代政治精英们的后代数量做了详细的分析和推算，并对中国中古贵族的繁殖能力表示惊讶</li>
+<li>藩镇割据并非像传统史学家认为的那样，是导致唐朝灭亡的主要原因，宪宗朝的削藩努力取得很大成功（尤其河北地区），一定程度上恢复了中央集权。剧变产生于唐末二十年，朝廷对地方的管理失控。</li>
+<li>唐代门阀大族的消亡原因，一是黄巢之乱对门阀士族的残杀和财富掠夺，导致其通过婚姻关系建立起来的网络破裂，二是受损之后门阀士族的价值观、政治权力难以匹敌新兴的权力阶层。（这个不是旁支观点，但是我喜欢这个想法，所以要放出来）</li>
+</ul>
+<p>最喜欢的有好几处，一是切入点：墓志铭，以往应该没有人会想到把墓志铭用作大规模研究的主要材料，多是补充论证的根据。二是思路：之前已经说过，我就想看看谭凯是怎么推翻原有理论，提出并论证自己的观点的。实际上他花了五分之四的篇幅铺垫京城精英是什么、怎样定量判断真正的精英，中间有非常大的一段写攀附门阀大族的潮流，初读时我还以为作者走偏了，后来发现谭凯就是喜欢这种图穷匕见的感觉（<br>这样看下来，一本书读到最后一章时会有非常畅快的感觉，就像“逢郎欲语低头笑，碧玉搔头落水中”一样，蓄势带来的美感真是处处都有啊。三是作者的思路严密，可说是无懈可击。虽说在读完本书后仍对黄巢之乱是导致唐朝灭亡、门阀消亡的主要原因这个观点存疑，但是对谭凯治学的严谨拜服不已。四当然是闪瞎我的各种数据利用方式，以地域做区别的各种官职图、权力交接图；人际关系网、婚姻关系网；父子链与集群……频数统计表都是最简单的，而在此之前我以为计量史学也就几种图表，真是太天真了。</p>
+<hr>
+<p>在说了那么多好之后，我还是要吐槽这本书的翻译，简直让我崩溃啊！明明谭凯的文风顺畅简明型的，结果被翻译得艰涩得很，无数次看不下去，过几个小时又忍不住拿起来。可见谭凯写的东西的魅力还是很大的，连我这个以翻译定输赢的人都打破规则了。要挂几处以说明我所言不虚：</p>
+<blockquote>
+<p>根据前文提及的死后信仰和对故去先人的责任，对于一个家庭来说，理想状态是生活于祖茔附近。尽管如此，出于各种理由，人们有时还是会长期移居他出。在这种情况下，某一家族也许会继续将去世的第一代移民运回祖茔安葬。</p>
+</blockquote>
+<blockquote>
+<p>随着唐代出现的新一波或因官徙居，或避安史之乱而来的移民，此前定居于此的家族只好迁往长江下游大区的边缘地带，并颇为显著地于初次在此地形成影响的一千年以后，重新主导了地方社会。</p>
+</blockquote>
+<p><em>这是什么话……能不能好好翻译啊，如果不是常年读学术文献的人，恐怕要读上好几遍才知道这是在说什么吧？这也太影响阅读体验了。</em></p>
+<p>也有一些疑惑：</p>
+<ul>
+<li>本书过于关注中晚唐转折的几十年，而对政治体制的整体演进研究较少，这对于门阀大族这样延续数百年的现象是不太合适的。</li>
+<li>观点能理解，但是一想到推理过程，实在太不同寻常，可能还需要很长一段时间才能接受。</li>
+<li>计量史学的适用范围在哪里呢？对于史料不足的领域是否合适？计量史学不可避免地有过于依赖资料、僵化的缺陷，如果走向另一个极端，会不会脱离事实而成为数据的奴隶？</li>
+<li>作为美籍汉学家，谭凯仍旧没能逃出洋人治汉学的缺陷，对于一些中国人的符号语言和政治规则，以及在体会历史的心理上存在隔阂。</li>
+<li>唐代公主下嫁多在贵族中选择，武皇后甚至以薛绍的嫂嫂萧氏家世贫寒而不同意太平公主嫁与薛绍。而到了宋代则多是勋贵之家不得尚主，驸马出身平平，这中间发生了什么变化？和门阀大族的消亡有必然联系吗？ </li>
+</ul>
+<p>中国当代的史学研究仍然有明显的士大夫治学特点，多是侃侃而谈，由抽象推到抽象，一些看似合理的推理实际上在事实中不一定对。比如《集体主义的逻辑》，另一本给我带来冲击的书，让我更深刻地意识到这一点。所以，无论从方式还是内容还是作者来说，《中古中国门阀大族的消亡》都是我很喜欢的一本书。</p>
+<p>去年年底还和朋友抱怨说一年里都没看到什么好书，唯一的两本还是专业推荐书，结果今年开学以来搜罗到的“好书”让自己读到怀疑人生……他们怎么这么强啊！</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/历史/" rel="tag"># 历史</a>
+          
+            <a href="/tags/计量史学/" rel="tag"># 计量史学</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/23/唐代门阀突然消亡的原因/" rel="next" title="唐代门阀突然消亡的原因">
+                <i class="fa fa-chevron-left"></i> 唐代门阀突然消亡的原因
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/06/湖上篇/" rel="prev" title="湖上篇">
+                湖上篇 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjM2OC8xMjkwMw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

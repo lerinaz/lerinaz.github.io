@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="之前由于 Hexo 博客没有搭建好，一部分文章就被放在了其他地方，现在搬过来。 这是一篇从5月4日写到了5月5日的文章，它记录了我搭建现在这个博客的全过程，以及其他。">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="“我从远方来”——搭建 Hexo 博客">
+<meta property="og:url" content="http://yoursite.com/2018/05/07/“我从远方来”——搭建 Hexo 博客/index.html">
+<meta property="og:site_name" content="Lerina&#39;s Blog">
+<meta property="og:description" content="之前由于 Hexo 博客没有搭建好，一部分文章就被放在了其他地方，现在搬过来。 这是一篇从5月4日写到了5月5日的文章，它记录了我搭建现在这个博客的全过程，以及其他。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2018/05/07/5aef88773db26.png">
+<meta property="og:image" content="https://i.loli.net/2018/05/07/5aef88b49e029.png">
+<meta property="og:updated_time" content="2018-05-10T09:43:31.412Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="“我从远方来”——搭建 Hexo 博客">
+<meta name="twitter:description" content="之前由于 Hexo 博客没有搭建好，一部分文章就被放在了其他地方，现在搬过来。 这是一篇从5月4日写到了5月5日的文章，它记录了我搭建现在这个博客的全过程，以及其他。">
+<meta name="twitter:image" content="https://i.loli.net/2018/05/07/5aef88773db26.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/07/“我从远方来”——搭建 Hexo 博客/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>“我从远方来”——搭建 Hexo 博客 | Lerina's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lerina's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/07/“我从远方来”——搭建 Hexo 博客/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lerina's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">“我从远方来”——搭建 Hexo 博客
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-07 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-07T00:00:00+08:00">2018-05-07</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-10 17:43:31" itemprop="dateModified" datetime="2018-05-10T17:43:31+08:00">2018-05-10</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><em>之前由于 Hexo 博客没有搭建好，一部分文章就被放在了其他地方，现在搬过来。</em> 这是一篇从5月4日写到了5月5日的文章，它记录了我搭建现在这个博客的全过程，以及其他。</p>
+<a id="more"></a>
+<h1 id="首先，要向师兄的耐心表示敬意"><a href="#首先，要向师兄的耐心表示敬意" class="headerlink" title="首先，要向师兄的耐心表示敬意"></a>首先，要向师兄的耐心表示敬意</h1><p>上周日正式开始用 Hexo + Github Pages 搭建博客，中途遇到了不少问题。林师兄一直不厌其烦地给我纠正错误。每次找到症结之后都会觉得自己有点傻，一点点小错误引发的后果很麻烦，幸好师兄没有嘲笑我，否则我铁定倍受打击再不想碰这个东西了。</p>
+<hr>
+<p>中途遇见的问题的详细描述放在后面一起说吧~</p>
+<hr>
+<h1 id="简化的步骤"><a href="#简化的步骤" class="headerlink" title="简化的步骤"></a>简化的步骤</h1><h2 id="搭建-Node-js-环境"><a href="#搭建-Node-js-环境" class="headerlink" title="搭建 Node.js 环境"></a>搭建 Node.js 环境</h2><ul>
+<li>下载+安装 <a href="https://nodejs.org/en/" target="_blank" rel="noopener">Node.js</a> </li>
+<li>在<strong>桌面空白</strong>处按 <strong>Shift + 右键</strong>打开命令窗口，输入<code>node -v</code>，按下回车键（即运行指令“node -v”），然后运行<code>npm -v</code>，检查版本和安装情况</li>
+</ul>
+<h2 id="搭建-Git-环境"><a href="#搭建-Git-环境" class="headerlink" title="搭建 Git 环境"></a>搭建 Git 环境</h2><ul>
+<li>下载+安装 <a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a>，注意<strong>勾选</strong> on the desktop 和 use a true type font</li>
+<li><strong>桌面右键</strong> 打开 Git Bash Here，运行<code>git --version</code>，以检查安装情况</li>
+</ul>
+<h2 id="GitHub-注册和配置"><a href="#GitHub-注册和配置" class="headerlink" title="GitHub 注册和配置"></a>GitHub 注册和配置</h2><p>因为之前已经注册过 GitHub，所以我只需要添加仓库就好了。没有注册则需先注册再添加仓库。并且注意用户名只支持英文。</p>
+<ol>
+<li>在 <a href="https://github.com/" target="_blank" rel="noopener">GitHub 官网</a>里面点击头像，选择 Your profile<br><img src="https://i.loli.net/2018/05/07/5aef88773db26.png" alt="image"></li>
+<li>点击 Repository 新建仓库<code>yourname/yourname.github.io</code>，（yourname 指代你自己的用户名，千万不要直接填 yourname 啦！！下同）在 Repository name 中填“yourname.github.io”，Description 是选填项<br><img src="https://i.loli.net/2018/05/07/5aef88b49e029.png" alt="image"></li>
+</ol>
+<h2 id="Hexo-的安装和配置"><a href="#Hexo-的安装和配置" class="headerlink" title="Hexo 的安装和配置"></a>Hexo 的安装和配置</h2><ul>
+<li>在 <strong>Git Bash Here</strong> 中先后运行命令<code>npm install hexo-cli -g</code>和<code>hexo version</code>检查版本和安装情况</li>
+<li>初始化 Hexo（如无特殊说明，都是在桌面打开 Git Bash Here）：<ol>
+<li>运行<code>hexo init yourname.github.io</code><strong>（修改用户名）</strong></li>
+<li>运行<code>cd yourname.github.io</code><strong>（修改用户名）</strong></li>
+<li>运行<code>npm install</code>，完成后会有新建的指定文件夹目录出现，它长这样：（#表示解释文件目录的内容）</li>
+</ol>
+</li>
+</ul>
+<pre><code>├── .deploy         #需要部署的文件
+├── node_modules    #Hexo插件
+├── public          #生成的静态网页文件
+├── scaffolds       #模板
+├── source          #博客正文和其他源文件
+| ├── _drafts       #草稿
+| └── _posts        #博客文章
+├── themes          #主题
+├── _config.yml     #全局配置文件
+└── package.json    #npm依赖
+</code></pre><ol>
+<li>接下来运行<code>hexo s</code>，如无意外，应该就能在<strong>本地</strong>运行 Hexo 了（当时在自己的电脑上看见那个日出还是什么的时候好激动啊啊）</li>
+<li>检查前面步骤，看看是否能打开本地运行 <code>https://localhost:4000/</code> 如果能看见日出的话——意味着前方一片光明<del>对我来说就是黑暗的开始</del></li>
+</ol>
+<h2 id="关联-Hexo-和-GitHub-Pages"><a href="#关联-Hexo-和-GitHub-Pages" class="headerlink" title="关联 Hexo 和 GitHub Pages"></a>关联 Hexo 和 GitHub Pages</h2><ul>
+<li>在<strong>任意地方新建一个文件夹</strong>（要注意的是，这个文件将会是你以后存放个人博客所有信息的地方，所以位置和命名需要一丢丢思考）</li>
+<li>在<strong>刚才新建的文件夹的空白处</strong>打开 Git Bash Here 命令窗口，输入<code>ssh -T git@github.com</code>，得到反馈 (yes/no) 后输入 yes </li>
+<li>配置个人信息：输入<code>git config --global user.name &quot;yourname&quot;</code>（改用户名）<br>和<code>git config --global user.email &quot;@qq.com&quot;</code>(补全 QQ 邮箱）</li>
+<li><p>配置 Deployment：查找文件<code>_config.yml</code>（比如我在D盘新建文件夹，将其命名为blog，那么这个文件的位置就是 D:\blog\lerinaz.github.io\_config.yml）用记事本打开<br>找到这一段并修改为如下：</p>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:yourname/yourname.github.io.git
+  branch: master
+</code></pre></li>
+</ul>
+<p><em>要注意冒号后有空格；并且注意修改用户名</em></p>
+<ul>
+<li>最后一步，将本地文件提交到 GitHub Pages:<br>在自动生成的<code>yourname.github.io</code>文件夹下（比如我的是 blog\lerinaz.github.io）运行指令<code>hexo g</code>，然后<code>hexo d</code>（据师兄说，也可以<code>hexo g &amp;&amp; hexo d</code> 一起输入，实践证明这更方便，但是要小心这里是两个&amp;）</li>
+<li>由于在我的安装过程中以上两个指令失败了，所以还需要安装一个扩展<code>npm install hexo-deployer-git --save</code>然后重复<code>hexo g &amp;&amp; hexo d</code></li>
+<li>这个时候在浏览器中输入<code>https://yourname.github.io</code> （修改用户名~）如果能打开的话，就说明一切都完成啦！</li>
+</ul>
+<hr>
+<h1 id="我遇到的问题"><a href="#我遇到的问题" class="headerlink" title="我遇到的问题"></a>我遇到的问题</h1><ul>
+<li>第一次试水是4月29日，时间有点久远……当时是没有新建文件夹导致命令都没法运行。</li>
+<li>第二次，也就是昨天，前面都很顺利，而在最后一步 Deploy 出了状况，因为理解错了意思，也忘了#表示说明，把三行命令一起输入了，现在想起来真是尴尬。</li>
+</ul>
+<hr>
+<h1 id="后话"><a href="#后话" class="headerlink" title="后话"></a>后话</h1><p>到这里就全部完成了，但是接下来一个更加艰难的问题摆在了我的面前——搭好之后呢？师兄emm了一下，说：你可以写篇文章庆祝一下，可能他还不知道我根本不知道要怎么用吧……</p>
+<hr>
+<h1 id="回过头来"><a href="#回过头来" class="headerlink" title="回过头来"></a>回过头来</h1><p>在外面跑了一个下午之后，昨晚接着做的。可能是之前已经犯过错的缘故，重复第上次的步骤时都比较顺利。直到最后一步，完全走不了了。当我问师兄哪里不对时，他告诉我“没错啊，你不是一次过了吗？”大佬真看得起我啊，这中间的每一次障碍如果没有他，我一个都解决不了。我又说本地文件提交到 Github 那里怎么不对，他依然是那句话“你只是忘了部署，总体来说是一次过。”这，这真是养孩子一样的鼓励啊……后来还有好多次理解错他的意思，比如让我<code>hexo deploy</code>，问我之前安装成功了吗？我以为问的是 Hexo——因为解答疑惑的时候告诉我说包管理器自动处理，还反问我“不然你之前怎么安装的 Hexo？”联系前后文，我就以为这里问的是 Hexo 有没有安装成功。感觉我的大脑已经习惯于散漫的诗歌散文和明清小品，而常常理解错指令的意思了。</p>
+<p>中间每一步都是截图，还是复制指令，因为我照着打的命令都常常出错。最重要的一句话<strong>一旦有报错就不要继续往下，先解决错误。</strong>（因为之前自己做的时候遇见不对的地方都没管它，只要没有红字我都接着走。中途师兄说：<strong>继续，每一步截图</strong>，哇感觉自己受到帝王级的待遇，竟然让信软大佬一步一步地教。而之前自己照着官网说明做的时候，都没怎么看反馈，一通乱走，到最后啥也不知道，也许从很早以前就出错了。</p>
+<p>主要技术支持来自师兄，还参考了两位博主的博客：<a href="http://www.lovebxm.com/2017/05/30/buildBlog/" target="_blank" rel="noopener">白小明</a>和<a href="https://xuanwo.org/2015/03/26/hexo-intor/" target="_blank" rel="noopener">Xuanwo</a></p>
+<p>向三位拜谢~~</p>
+<hr>
+<h1 id="写这篇文章时，看见美丽的蓝花楹"><a href="#写这篇文章时，看见美丽的蓝花楹" class="headerlink" title="写这篇文章时，看见美丽的蓝花楹"></a>写这篇文章时，看见美丽的蓝花楹</h1><p>上午都在图书馆，湖边的蓝花楹全开了，这才知道那棵树竟是蓝花楹。</p>
+<p>想起去年冬天，在为期末考试复习的那段时间里，从早到晚都窝在图书馆，每隔一个小时就到落地窗这里来望望远处，当时看见它光秃秃的，还以为是棵栾树来着。</p>
+<p>这是我第一次看见蓝花楹开花的样子，和想象中是一样的温柔浪漫，只是没想到它的花只能从上面看，因为柔软的蓝色花瓣都开在树冠，在树荫下是看不见的。从去年进校看见它们奇幻的树冠和叶片开始，我就盼望着花开的时节，而今年温暖的四月里，终于等到了。远远地望见组团旁的那棵蓝花楹的时候，会觉得整颗心都被它们融化了，像悠闲地躺在白云上，又会不由自主地想象着，在静谧的夜里，溶溶月色下倦鸟居巢，人闲无声，一片花瓣飘落的声音。图书馆旁边的那一棵和远处的主楼、树林形成了绝佳的组合景色，树林那浓密的绿色层层叠叠，掩映其中的是主楼洁白端庄的身姿，右边还有小小的西湖一角，有时候在阳光下泛着金色光芒。此时，蓝花楹温柔的紫色就成了点睛之笔，将入眼的画面全都点染上轻盈的梦，好像身在幻境之中。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/07/Hexo 博客的管理/" rel="prev" title="Hexo 博客的管理">
+                Hexo 博客的管理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjM2OC8xMjkwMw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#首先，要向师兄的耐心表示敬意"><span class="nav-number">1.</span> <span class="nav-text">首先，要向师兄的耐心表示敬意</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简化的步骤"><span class="nav-number">2.</span> <span class="nav-text">简化的步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建-Node-js-环境"><span class="nav-number">2.1.</span> <span class="nav-text">搭建 Node.js 环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建-Git-环境"><span class="nav-number">2.2.</span> <span class="nav-text">搭建 Git 环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub-注册和配置"><span class="nav-number">2.3.</span> <span class="nav-text">GitHub 注册和配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo-的安装和配置"><span class="nav-number">2.4.</span> <span class="nav-text">Hexo 的安装和配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关联-Hexo-和-GitHub-Pages"><span class="nav-number">2.5.</span> <span class="nav-text">关联 Hexo 和 GitHub Pages</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#我遇到的问题"><span class="nav-number">3.</span> <span class="nav-text">我遇到的问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后话"><span class="nav-number">4.</span> <span class="nav-text">后话</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#回过头来"><span class="nav-number">5.</span> <span class="nav-text">回过头来</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写这篇文章时，看见美丽的蓝花楹"><span class="nav-number">6.</span> <span class="nav-text">写这篇文章时，看见美丽的蓝花楹</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

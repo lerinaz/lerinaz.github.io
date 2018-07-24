@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.2.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico.png?v=6.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.2.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Hexo 博客管理时最最基础的几项操作。来自我无数次探险和掉落深坑的经验，感谢 Google、各位贡献自己经验的博主，以及一边半期考试一边帮我答疑排雷的林师兄。">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 博客的管理">
+<meta property="og:url" content="http://yoursite.com/2018/05/07/Hexo 博客的管理/index.html">
+<meta property="og:site_name" content="Lerina&#39;s Blog">
+<meta property="og:description" content="Hexo 博客管理时最最基础的几项操作。来自我无数次探险和掉落深坑的经验，感谢 Google、各位贡献自己经验的博主，以及一边半期考试一边帮我答疑排雷的林师兄。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://i.loli.net/2018/05/07/5af043a4ed875.png">
+<meta property="og:image" content="https://i.loli.net/2018/05/07/5af043a26c8ec.png">
+<meta property="og:image" content="https://i.loli.net/2018/05/08/5af1591fda614.png">
+<meta property="og:updated_time" content="2018-05-10T14:59:27.784Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo 博客的管理">
+<meta name="twitter:description" content="Hexo 博客管理时最最基础的几项操作。来自我无数次探险和掉落深坑的经验，感谢 Google、各位贡献自己经验的博主，以及一边半期考试一边帮我答疑排雷的林师兄。">
+<meta name="twitter:image" content="https://i.loli.net/2018/05/07/5af043a4ed875.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/07/Hexo 博客的管理/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Hexo 博客的管理 | Lerina's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Lerina's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/07/Hexo 博客的管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lerina's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Hexo 博客的管理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-05-07 00:00:00" itemprop="dateCreated datePublished" datetime="2018-05-07T00:00:00+08:00">2018-05-07</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-10 22:59:27" itemprop="dateModified" datetime="2018-05-10T22:59:27+08:00">2018-05-10</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>Hexo 博客管理时最最基础的几项操作。来自我无数次探险和掉落深坑的经验，感谢 Google、各位贡献自己经验的博主，以及一边半期考试一边帮我答疑排雷的林师兄。</p>
+<a id="more"></a>
+<hr>
+<h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><p>在 Hexo 博客最初搭好时，默认的主题是 landscape，第一次看见它，哪怕经历种种困难终于成功，满含喜悦的我还是想换掉这个主题，于是就有了下文:</p>
+<h2 id="选择主题并下载"><a href="#选择主题并下载" class="headerlink" title="选择主题并下载"></a>选择主题并下载</h2><ul>
+<li>在 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">Hexo 官方主题</a>上选择自己喜欢的，点击主题名<br><img src="https://i.loli.net/2018/05/07/5af043a4ed875.png" alt="image"></li>
+<li>页面转到了 GitHub，然后点击<code>clone or download</code>和<code>download ZIP</code>进行下载<br><img src="https://i.loli.net/2018/05/07/5af043a26c8ec.png" alt="image"></li>
+</ul>
+<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><p>将本地压缩包解压到博客文件夹 \themes 中</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>接下来有两种做法，最终都能达到目的</p>
+<h3 id="第一种方法"><a href="#第一种方法" class="headerlink" title="第一种方法"></a>第一种方法</h3><ul>
+<li>将解压后的主题文件夹名由”hexo-theme-again-master”更改为”again”（同刚才下载的主题名一致）</li>
+<li><p>用记事本打开站点配置文件<code>_config.yml</code>，找到这一段：（点击左上角的编辑可以进行查找）</p>
+<pre><code># Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: next
+</code></pre><p>修改 theme 对应的主题，比如我这里就是将 landscape 改成了 next</p>
+</li>
+<li><p>在博客文件夹下运行命令窗口 Git Bash Here，指令为<code>hexo g &amp;&amp; hexo d</code></p>
+</li>
+</ul>
+<p><em><code>hexo g &amp;&amp; hexo d</code>表示重新部署，包括发布文章在内的很多操作最后都是通过它来实现的。</em></p>
+<h3 id="第二种做法"><a href="#第二种做法" class="headerlink" title="第二种做法"></a>第二种做法</h3><p>直接将<code>_config.yml</code>中的 theme 对应的内容修改为解压后的文件名即可。</p>
+<h2 id="我犯错的地方"><a href="#我犯错的地方" class="headerlink" title="我犯错的地方"></a>我犯错的地方</h2><p>由以上两种方法可知，无论是哪一种做法，只要确保全局配置文件中 theme 的设置和解压后的文件名相同就行了。而我呢……我没意识到这一点，两处不一致导致博客打开后一片空白，于是又是一阵好找，花了一个多小时才找出根由——生气！</p>
+<hr>
+<h1 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h1><p><em>由于外行的我并不明白 Hexo + GitHub Pages 搭建博客的原理是什么，又是怎样运行的，所以在发布文章这里停留了好一会儿。到现在三天过去了，通过熟悉操作加上自己地理解，渐渐地有了一些推测，所以才敢把这些操作写下来——希望师兄看见的时候不要笑话我。</em></p>
+<p>以及，在写文章之前你需要知道什么是 Markdown，由于我是先学会了 Markdown 再开始搭建博客的，所以一搭好就能开始写文章，极大地满足了我的博客愿望。<br>关于 Markdown，它是一种很简单语言，不需要专门花时间去学，最好的方法是直接用它来写文章，而有道云笔记提供了一些功能键，可以帮助对其语法不熟悉的人迅速上手。你也可以看看马克飞象的相关描述：<a href="https://maxiang.io/" target="_blank" rel="noopener">https://maxiang.io/</a></p>
+<h2 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h2><p>两种做法：</p>
+<h3 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h3><p>打开博客文件夹，运行命令<code>hexo new &quot;XXX&quot;</code>（XXX为要新建的文章名），此时打开 \source 文件，就会看到新建的 .md 文件，用支持 Markdown 的程序打开并写好文章就好啦。</p>
+<h3 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h3><p>在支持 Markdown 的程序中新建文件并写好文章。</p>
+<p>Markdown 编辑器有很多，刚刚搭好博客时，考虑到我正在使用印象笔记，师兄向我推荐了马克飞象，但是我嫌两个程序配合使用有点麻烦，于是跟随他的脚步转向了有道云笔记。</p>
+<p>以有道云笔记为例：新文档-新建 Markdown-写好文章-右键点击文章-另存为-存到 \source\posts 中。</p>
+<h2 id="发布文章-1"><a href="#发布文章-1" class="headerlink" title="发布文章"></a>发布文章</h2><p>在博客文件夹下运行命令<code>hexo g &amp;&amp; hexo d</code>，稍等一下下，就能在博客中看见你的最新发布啦~</p>
+<h2 id="我又走错了"><a href="#我又走错了" class="headerlink" title="我又走错了"></a>我又走错了</h2><p>第一次发布文章的时候，因为理解错了两种新建文章的方式，我将它们混用，先在有道云笔记中写好了文章并保存，然后又运行<code>hexo new</code>，打开 \posts——咦咦咦为什么自动生成了一个同名文件，只是加了<code>-1</code>？于是：“师兄师兄，求救求救……”</p>
+<p>后来搞明白了，原来<code>hexo new</code>是新建，而不是我所以认为的更新。（感觉这里会被打，“<code>hexo new</code>是更新的意思？那之前重复了那么多次的<code>hexo g &amp;&amp; hexo d</code>被我放哪里了？”）</p>
+<hr>
+<h1 id="在首页增加标签、分类-and-so-on"><a href="#在首页增加标签、分类-and-so-on" class="headerlink" title="在首页增加标签、分类 and so on"></a>在首页增加标签、分类 and so on</h1><p><em>首先有个问题是：标签和分类有什么不同？分类就是我们平常所说的分类，标签是对每篇文章的相关性做一个判定。它们的不同之处在于，分类是穷尽的，而标签是多样的，即一篇文章可以有多个标签，但只能有一种分类。</em></p>
+<p>由于标签和分类的设置方法<del>很类似</del>几乎完全相同，只需要在操作时把“标签”改为“分类”就好，所以下面以设置标签为例进行说明。</p>
+<h2 id="开启标签页"><a href="#开启标签页" class="headerlink" title="开启标签页"></a>开启标签页</h2><p>打开博客文件，运行命令<code>hexo new page tags</code></p>
+<h2 id="编辑主题配置文件"><a href="#编辑主题配置文件" class="headerlink" title="编辑主题配置文件"></a>编辑主题配置文件</h2><p>打开主题配置文件，（关于主题配置文件和全局配置文件，请移步另一篇文章《Hexo 各种问题汇总》，通过标签 Hexo 可以快速找到）找到这一段：</p>
+<pre><code>menu:
+  home: /
+  archives: /archives
+  #about: /about
+  #categories: /categories
+  #tags: /tags
+  #commonweal: /404.html
+</code></pre><p>此处的#表示锁定，带#的项目都不会在页面上展示出来，所以我们需要做的就是将<code>tags</code>前面的#去掉，像这样：</p>
+<pre><code>menu:
+  home: /
+  archives: /archives
+  #about: /about
+  #categories: /categories
+  tags: /tags
+  #commonweal: /404.html
+</code></pre><p>也有可能你的版本为<code>tags:</code>，那么就需要手动添加<code>/tags</code></p>
+<h2 id="修改标签文件"><a href="#修改标签文件" class="headerlink" title="修改标签文件"></a>修改标签文件</h2><p>在\source\tags 下，找到并打开<code>index.md</code>将其修改为：</p>
+<pre><code>---
+title: tags
+date: 2018-05-09 17:21:45
+type: tags
+---
+</code></pre><h2 id="设置文章的tag"><a href="#设置文章的tag" class="headerlink" title="设置文章的tag"></a>设置文章的tag</h2><p>在写文章的时候添加标签，稍后发布时会自动分类到对应标签，这里也要注意<code>tag:</code>后面是<strong>有一个空格</strong>的哦！<br><img src="https://i.loli.net/2018/05/08/5af1591fda614.png" alt="image"></p>
+<p>现在检查一下标签功能是否加上了吧~可能需要一小会儿的缓存时间</p>
+<hr>
+<h1 id="更改博客站名"><a href="#更改博客站名" class="headerlink" title="更改博客站名"></a>更改博客站名</h1><p>类似的还可以做很多修改，都是通过修改全局配置文件实现的。所以仅以此为例，其他的操作请勇敢地探索（</p>
+<p>打开全局配置文件，找到这一段：</p>
+<pre><code># Site
+title: 
+subtitle:
+description:
+keywords:
+author: John Doe
+language: zh-CN
+timezone:
+</code></pre><p><em>这一段的意思（据我推测大概是）站点的名称以及描述，具体对应的是什么正在一一试验中。</em></p>
+<p>修改<code>title:</code>的对应内容，比如我将它改为：</p>
+<pre><code># Site
+title: Lerina&apos;s Blog
+subtitle:
+description:
+keywords:
+author: 
+language: zh-CN
+timezone:
+</code></pre><p>现在<code>hexo g &amp;&amp; hexo d</code>，看看怎么样了吧~</p>
+<hr>
+<h1 id="在首页折叠文章"><a href="#在首页折叠文章" class="headerlink" title="在首页折叠文章"></a>在首页折叠文章</h1><p>Hexo 默认设置将文章全文都展示在首页，这对于读者来说一点都不友好，所以我对此做了一些修改。其实折叠文章或者只展示摘要有两种做法，一种我看不懂（ 所以这里用的是在文章中添加隐藏符号的方法，这也是 next 主题官方文档中推荐的做法。</p>
+<p>在写文章的时候添加<code>&lt;!-- more --&gt;</code>就可以达到目的，具体如下：</p>
+<pre><code>---
+title: Hexo博客的管理
+date: 2018-05-07
+tag: hexo
+---
+
+摘要
+
+&lt;!-- more --&gt;
+
+正文
+</code></pre><p>如果你不想写摘要，那就直接写正文：</p>
+<pre><code>---
+title: Hexo博客的管理
+date: 2018-05-07
+tag: hexo
+---
+
+&lt;!-- more --&gt;
+
+正文
+</code></pre><p>这样发布文章后就会自动选取正文的前一部分展示出来，其余的仍然会被折叠。</p>
+<hr>
+<h1 id="试运行"><a href="#试运行" class="headerlink" title="试运行"></a>试运行</h1><p><em>这是专门写给我自己的吧……</em></p>
+<p>因为有道云笔记的 Markdown 功能太强大了，在许多细节上处理得非常好，而 Hexo 在这方面则要逊色一些，所以有时候调好的排版展示在博客中并不友好。——其实<strong>真正的原因</strong>是我常常不注意空格和别字，导致一次又一次的<code>hexo g &amp;&amp; hexo d</code>，后来突然意识到我可以在本地运行检查啊，这样还不用等网站的缓存了，岂不妙哉？</p>
+<p>所以我只是想说：如果想检查下文章的各种情况的话，可以在写好之后运行<code>hexo s</code>，打开<code>http://localhost:4000/</code>在本地查看。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/07/“我从远方来”——搭建 Hexo 博客/" rel="next" title="“我从远方来”——搭建 Hexo 博客">
+                <i class="fa fa-chevron-left"></i> “我从远方来”——搭建 Hexo 博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/08/Hexo 博客各种问题汇总/" rel="prev" title="Hexo 博客各种问题汇总">
+                Hexo 博客各种问题汇总 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjM2OC8xMjkwMw=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name"></p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#更换主题"><span class="nav-number">1.</span> <span class="nav-text">更换主题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#选择主题并下载"><span class="nav-number">1.1.</span> <span class="nav-text">选择主题并下载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解压"><span class="nav-number">1.2.</span> <span class="nav-text">解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#应用"><span class="nav-number">1.3.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一种方法"><span class="nav-number">1.3.1.</span> <span class="nav-text">第一种方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二种做法"><span class="nav-number">1.3.2.</span> <span class="nav-text">第二种做法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我犯错的地方"><span class="nav-number">1.4.</span> <span class="nav-text">我犯错的地方</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发布文章"><span class="nav-number">2.</span> <span class="nav-text">发布文章</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新建文章"><span class="nav-number">2.1.</span> <span class="nav-text">新建文章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一种"><span class="nav-number">2.1.1.</span> <span class="nav-text">第一种</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二种"><span class="nav-number">2.1.2.</span> <span class="nav-text">第二种</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发布文章-1"><span class="nav-number">2.2.</span> <span class="nav-text">发布文章</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我又走错了"><span class="nav-number">2.3.</span> <span class="nav-text">我又走错了</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在首页增加标签、分类-and-so-on"><span class="nav-number">3.</span> <span class="nav-text">在首页增加标签、分类 and so on</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#开启标签页"><span class="nav-number">3.1.</span> <span class="nav-text">开启标签页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑主题配置文件"><span class="nav-number">3.2.</span> <span class="nav-text">编辑主题配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改标签文件"><span class="nav-number">3.3.</span> <span class="nav-text">修改标签文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置文章的tag"><span class="nav-number">3.4.</span> <span class="nav-text">设置文章的tag</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更改博客站名"><span class="nav-number">4.</span> <span class="nav-text">更改博客站名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在首页折叠文章"><span class="nav-number">5.</span> <span class="nav-text">在首页折叠文章</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#试运行"><span class="nav-number">6.</span> <span class="nav-text">试运行</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder"></span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Muse</a> v6.2.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.2.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.2.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.2.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.2.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.2.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
